@@ -57,6 +57,13 @@ img.grayscale {
 .vert {
   vertical-align: middle;
   width:100%;
+  padding-top:15%;
+  text-align:center;
+}
+
+.vert2 {
+  vertical-align: middle;
+  width:100%;
   padding-top:4%;
   text-align:center;
 }
@@ -175,8 +182,8 @@ img.grayscale {
 
 .callout {
   color: #ffffff;
-  padding-top:7%;
-  height: 100%;
+  padding-top:4%;
+  height: 50%;
   width: 100%;
   background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
