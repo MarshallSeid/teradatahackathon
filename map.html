@@ -40,10 +40,9 @@
     <div id="panel">
       <button type="button" class="btn btn-primary" onclick="sanFrancisco()">San Francisco</button>
       <button type="button" class="btn btn-success" onclick="sanDiego()">San Diego</button>
-      <button type="button" class="btn btn-info"onclick="oregon()">Oregon</button>
       <button type="button" class="btn btn-warning" onclick="toggleHeatmap()">Toggle Heatmap</button>
       <button type="button" class="btn btn-danger" onclick="changeGradient()">Change gradient</button>
-      <button type="button" class="btn btn-default"  onclick="changeRadius()">Change radius</button>
+      <button type="button" class="btn btn-info"  onclick="changeRadius()">Change radius</button>
       <!--<button onclick="changeOpacity()">Change opacity</button>-->
     </div>
     <div id="map"></div>
@@ -116,7 +115,7 @@ function changeGradient() {
 }
 
 function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 30);
+  heatmap.set('radius', heatmap.get('radius') ? null : 20);
 }
 
 function changeOpacity() {
