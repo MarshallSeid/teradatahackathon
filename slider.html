@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Heatmaps</title>
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/buttons.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Push is a Bootstrap button pack that can be seamlessly integrated into any website, theme or template.">
+        <link rel="icon" href="assets/ico/favicon.ico">		
+
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Roboto:100,300,400,700" rel="stylesheet" type="text/css">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/demo.css" rel="stylesheet">
+        <link href="css/buttons.css" rel="stylesheet">
+        <link href="css/jquery-ui-slider-pips.css" rel="stylesheet">
+        <style>
+            body {
+                padding: 50px;
+            }
+            #map {
+                height: 100%;
+            }
+            #panel {
+                background-color: #fff;
+                border: 1px solid #999;
+                left: 25%;
+                padding: 5px;
+                position: absolute;
+                top: 10px;
+                z-index: 5;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="slider"></div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-slider-pips.js"></script>
+        <script type="text/javascript">
+            var dates = ["2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12"];
+            //var activeDate = new Date().getYear();
+            $(".slider")
+                .slider({
+                    min: 0,
+                    max: dates.length - 1
+                    //value: activeYear
+                })
+                .slider("pips", {
+                    rest: "label",
+                    labels: dates
+                });
+        </script>
+    </body>
+</html>
+
