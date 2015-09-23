@@ -102,10 +102,6 @@
         });
     }
     function sanFrancisco(date) {
-        map.setCenter({
-            lat: 37.7745,
-            lng: -122.433
-        });
         var obj = queryPoints(function(err, result) {
             heatmap = new google.maps.visualization.HeatmapLayer({
             data: getPoints(result),
@@ -199,6 +195,7 @@
     <script type="text/javascript">
     var date;
     $('.ui-slider-pip-label').click(function(e){
+        if(heatmap!=undefined)heatmap.setMap(null);
         console.log("clicked label");
         date = $(e.target).text() + "-15";
         console.log("DATE: " + date);
