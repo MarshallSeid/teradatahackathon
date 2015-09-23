@@ -16,6 +16,8 @@
             <link href="css/demo.css" rel="stylesheet">
             <link href="css/buttons.css" rel="stylesheet">
             <link href="css/jquery-ui-slider-pips.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="css/slicknav.css">
+            
             <style>
                 html, body {
                     height: 100%;
@@ -28,20 +30,29 @@
                 #panel {
                     background-color: #fff;
                     border: 1px solid #999;
-                    left: 25%;
-                    padding: 5px;
+                    float: left;
+                    padding: 10px;
+                    margin-top: 50%;
                     position: absolute;
                     top: 10px;
-                    z-index: 5;
+                    z-index: 25;
+                    width: 100%;
                 }
             </style>
         </head>
         <body>
+            <ul id="menu" style="display:none;">
+                <li><a type="button" class="btn btn-primary" onclick="sanFrancisco()">San Francisco</a></li>
+                <li><a type="button" class="btn btn-warning" onclick="toggleHeatmap()">Toggle Heatmap</a></li>
+                <li><a type="button" class="btn btn-danger" onclick="changeGradient()">Change gradient</a></li>
+                <li><a type="button" class="btn btn-info"  onclick="changeRadius()">Change radius</a></li>
+            </ul>
+            <div id="buttonMenu"></div>
             <div id="panel">
-                <button type="button" class="btn btn-primary" onclick="sanFrancisco()">San Francisco</button>
+                <!-- <button type="button" class="btn btn-primary" onclick="sanFrancisco()">San Francisco</button>
                 <button type="button" class="btn btn-warning" onclick="toggleHeatmap()">Toggle Heatmap</button>
                 <button type="button" class="btn btn-danger" onclick="changeGradient()">Change gradient</button>
-                <button type="button" class="btn btn-info"  onclick="changeRadius()">Change radius</button>
+                <button type="button" class="btn btn-info"  onclick="changeRadius()">Change radius</button> -->
                 <div class="slider"></div>
             </div>
 
@@ -169,6 +180,7 @@
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-slider-pips.js"></script>
     <script type="text/javascript">
             var dates = ["2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12"];
@@ -193,5 +205,12 @@
         sanFrancisco(date);
     });
     </script>
+    <script>
+    $(function(){
+        $('#menu').slicknav({
+            prependTo:'#buttonMenu'
+        });
+    });
+</script>
 </body>
 </html>
