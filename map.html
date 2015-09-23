@@ -12,9 +12,10 @@
             <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Roboto:100,300,400,700" rel="stylesheet" type="text/css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-            <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-            <link href="assets/css/demo.css" rel="stylesheet">
-            <link href="assets/css/buttons.css" rel="stylesheet">
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+            <link href="css/demo.css" rel="stylesheet">
+            <link href="css/buttons.css" rel="stylesheet">
+            <link href="css/jquery-ui-slider-pips.css" rel="stylesheet">
             <style>
                 html, body {
                     height: 100%;
@@ -45,7 +46,9 @@
                 <button type="button" class="btn btn-warning" onclick="toggleHeatmap()">Toggle Heatmap</button>
                 <button type="button" class="btn btn-danger" onclick="changeGradient()">Change gradient</button>
                 <button type="button" class="btn btn-info"  onclick="changeRadius()">Change radius</button>
+                <div class="slider"></div>
             </div>
+
 
             <div id="map"></div>
             <script>
@@ -91,7 +94,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP,
         });
     }
-    function sanFrancisco() {
+    function sanFrancisco(date) {
         map.setCenter({
             lat: 37.7745,
             lng: -122.433
@@ -101,7 +104,7 @@
             data: getPoints(result),
             map: map
             });
-        }, "2015-03-23");
+        }, date);
     }
     function sanDiego() {
         map.setCenter({
@@ -162,10 +165,37 @@
         heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
     }
 </script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=visualization&callback=initMap">
-</script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=visualization&callback=initMap">
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-slider-pips.js"></script>
+    <script type="text/javascript">
+            var dates = ["2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12"];
+            //var activeDate = new Date().getYear();
+            $(".slider")
+                .slider({
+                    min: 0,
+                    max: dates.length - 1
+                    //value: activeYear
+                })
+                .slider("pips", {
+                    rest: "label",
+                    labels: dates
+                });
+    </script>
+    <script type="text/javascript">
+    var date;
+    $('.ui-slider-pip-label').click(function(e){
+        console.log("clicked label");
+        date = $(e.target).text() + "-15";
+        console.log("DATE: " + date);
+        sanFrancisco(date);
+    });
+    </script>
 </body>
 </html>
