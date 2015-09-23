@@ -23,6 +23,4 @@ GENTRIFICATION AND THE BATTLE FOR THE HEART OF SAN FRANCISCO | MARIA POBLET:
 	http://www.cjjc.org/publications/maria-poblets-blog/576-heart-of-sf
 Video Trailer: http://www.sfchronicle.com/the-mission/
 
-
-App Token NoY6yI7PUVj2wx9Hu1RaOMMOl
-Secret Token lY9PUyUKPIiZlN8ijabJAwEY5y8z10aTWJyT
+HeatMap Information: https://developers.google.com/maps/documentation/javascript/heatmaplayer
