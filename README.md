@@ -11,7 +11,7 @@ Types of Crime - This many police stations
 	Amount of police activity
 	When police stations open - 
 
-SODA API: http://dev.socrata.com/foundry/#/data.sfgov.org/tmnf-yvry
+SODA API: http://dev.socrata.com/foundry/#/data.sfgov.org/cuks-n6tp
 
 Used Google Maps API, https://data.sfgov.org API, https://data.police.uk API, HTML, Javscript 	
 
@@ -23,3 +23,6 @@ GENTRIFICATION AND THE BATTLE FOR THE HEART OF SAN FRANCISCO | MARIA POBLET:
 	http://www.cjjc.org/publications/maria-poblets-blog/576-heart-of-sf
 Video Trailer: http://www.sfchronicle.com/the-mission/
 
+
+App Token NoY6yI7PUVj2wx9Hu1RaOMMOl
+Secret Token lY9PUyUKPIiZlN8ijabJAwEY5y8z10aTWJyT
